@@ -44,7 +44,7 @@ function cards(input) {
             players[name] = total;
 
         })
-    return Object.keys(players).map( name => `${name} : ${players[name]}`).join('\n');
+    return Object.keys(players).map( name =>`${name}: ${players[name]}`).join('\n');
 }
 
 

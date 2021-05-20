@@ -7,22 +7,21 @@ function minerTask(input) {
 
     for (let i = 0; i < inputArr.length; i += 2) {
         let resource = inputArr[i];
-        if (resource.toLowerCase() == "stop") {
+        if (resource.toLowerCase() === "stop") {
             break;
         }
         let quantity = parseInt(inputArr[i + 1]);
 
         if (resource in resourceAndQuantity) {
             resourceAndQuantity[resource] += quantity;
-        } else {
+        } 
+        else {
             resourceAndQuantity[resource] = quantity;
         }
     }
     for (let key in resourceAndQuantity) {
         if (resourceAndQuantity.hasOwnProperty(key)) {
-
             console.log(key + ' -> ' + resourceAndQuantity[key]);
         }
-
     }
 }
