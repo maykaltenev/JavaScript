@@ -9,4 +9,4 @@ function evenPositionElements(input) {
     }
     console.log(result);
 }
-evenPositionElements(['20', '30', '40', '50', '60']);
+evenPositionElements(['20', '30', '40', '50', '60'])
