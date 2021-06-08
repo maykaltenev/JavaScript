@@ -38,3 +38,13 @@ console.log(myObj.fullName());
 
 const sayHi = myObj.sayHi;
 console.log(sayHi());
+
+function createReact(width, height) {
+    const react = { width, height };
+
+    react.getAREA = () => {
+        return react.width * react.height;
+    };
+
+    return react;
+}
