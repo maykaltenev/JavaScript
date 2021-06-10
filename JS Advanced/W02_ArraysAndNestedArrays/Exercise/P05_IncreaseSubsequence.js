@@ -10,10 +10,8 @@ function increaseSubsequence(numArr) {
     }, [])
     return result;
 
-
-
-
 }
+
 console.log(increaseSubsequence([1,
     3,
     8,
