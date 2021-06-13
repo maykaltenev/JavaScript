@@ -1,14 +1,13 @@
-function magicMatrix(matrix) {
-    for (let row = 0; row < matrix.length; row++) {
-        let curRow = matrix[row];
-        let sum = 0;
-        for (let col = 0; col < matrix[0].length; col++) {
-            let el = matrix[row][col]
-            sum += el;
+function magicMatrix(arr) {
+  return checkMagic(arr) && 
+  checkMagic(rotate(arr));
 
+  function rotate(array){
+      return array[0].map((x,i)=> array.map(x=> x[i]))
+  }
+  function checkMagic(arr){
+      arr = arr.map(x=>x.reduce((a,b)=> a+b));
 
-        }
-
-    }
-
+      return Array.from(new Set(arr)).length === 1;
+  }
 }
