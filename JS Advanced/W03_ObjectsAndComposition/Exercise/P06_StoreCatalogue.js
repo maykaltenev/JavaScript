@@ -24,7 +24,7 @@ function storeCatalog(dataRows) {
     }
 }
 
-console.log(storeCatalog(['Appricot : 20.4',
+console.log(storeCatalog(['Apricot : 20.4',
     'Fridge : 1500',
     'TV : 1499',
     'Deodorant : 10',
