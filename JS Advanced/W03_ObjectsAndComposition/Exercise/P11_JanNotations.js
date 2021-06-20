@@ -1,46 +1,27 @@
-function janNotations(inputArr) {
+function janNotation(params) {
+    let operations = {
+        '+': (first, second) => first + second, 
+        '-': (first, second) => first - second, 
+        '*': (first, second) => first * second, 
+        '/': (first, second) => first / second, 
+    }
 
-    let operands = [];
-    let wasWrong = false;
-
-    for (let index = 0; index < inputArr.length; index++) {
-        if (typeof inputArr[index] === 'number') {
-
-            operands.push(inputArr[index]);
+    let numbers = [];
+    for (const item of params) {
+        if (Number.isFinite(item)) {
+            numbers.push(item);
         } else {
-            let operator = inputArr[index];
-            if(operands.length < 2){
-                console.log('Error: not enough operands!');
-                wasWrong = true;
-                break;
+            if (numbers.length < 2) {
+                return 'Error: not enough operands!';
+            } else {
+                let second = numbers.pop();
+                let first = numbers.pop();
+                numbers.push(operations[item](first, second));
             }
-
-            let operand2 = operands.pop();
-            let operand1 = operands.pop();
-            let result = applyOperation = (operand1, operand2, operator);
-            operands.push(result);
         }
-
     }
-    if(operands.length > 1 && wasWrong === false){
-        console.log('Error: too many operands!');
-    } else if(wasWrong === true) {
-        console.log(operands[0]);
-    }
-
-    function applyOperation(operand1, operand2, operator) {
-        const arithmeticalOperation = {
-            '+': () => operand1 + operand2,
-            '-': () => operand1 - operand2,
-            '/': () => operand1 / operand2,
-            '*': () => operand1 * operand2,
-        }
-        return arithmeticalOperation[operator]();
-    }
+    
+    return numbers.length > 1 
+        ? 'Error: too many operands!'
+        : numbers[0];
 }
-
-
-console.log(janNotations([7,
-    33,
-    8,
-    '-']))
