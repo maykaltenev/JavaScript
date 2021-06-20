@@ -14,6 +14,6 @@ function subtract() {
     let result = num1 - num2;
 
     // display result in DOM
-    let resultDiv = document.getElementsById('result');
+    let resultDiv = document.getElementById('result');
     resultDiv.textContent = result;
 }
